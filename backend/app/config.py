@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 # 24 hours
     DATABASE_URL: str = "sqlite:///./healthmate.db"
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,https://healthmate-app.netlify.app"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,https://healthmate8.netlify.app,https://healthmate-app.netlify.app"
     DATASET_PATH: str = "data/healthmate_indian_food_dataset_1200plus.xlsx"
 
     @property

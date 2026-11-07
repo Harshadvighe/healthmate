@@ -18,7 +18,7 @@ services:
           name: healthmate-db
           property: connectionString
       - key: CORS_ORIGINS
-        value: https://healthmate-app.netlify.app
+        value: https://healthmate8.netlify.app,https://healthmate-app.netlify.app
 
 databases:
   - name: healthmate-db

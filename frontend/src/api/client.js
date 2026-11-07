@@ -33,7 +33,16 @@ export async function apiRequest(endpoint, options = {}) {
   }
 
   if (!response.ok) {
-    const errorMsg = (data && data.detail) || response.statusText || 'Request failed';
+    let errorMsg = (data && data.detail);
+    if (!errorMsg) {
+      if (response.status === 404) {
+        errorMsg = 'Backend API server unreachable (404). Please verify that your backend service is deployed and running on Render.';
+      } else if (response.status === 502 || response.status === 503 || response.status === 504) {
+        errorMsg = 'Backend server is waking up or temporarily unavailable. Please retry in 30 seconds.';
+      } else {
+        errorMsg = response.statusText || 'Request failed';
+      }
+    }
     const error = new Error(errorMsg);
     error.status = response.status;
     error.data = data;
