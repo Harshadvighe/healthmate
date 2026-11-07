@@ -218,3 +218,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==========================================
+# HealthMate Local Run & Build Artifacts
+# ==========================================
+backend/.env
+frontend/.env
+*.pid
+*.db
+*.db-journal
+logs/
+.healthmate_pids.txt
+backend/healthmate.db
+backend/healthmate.db-journal
+backend/venv/
+frontend/node_modules/
+frontend/dist/
+
